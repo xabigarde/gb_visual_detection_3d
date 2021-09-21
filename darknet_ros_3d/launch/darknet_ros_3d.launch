@@ -1,5 +1,9 @@
 <launch>
 
+  <node pkg="image_transport" type="republish" name="rgb_decompress" args=" compressed in:=/rgb_republish raw out:=/camera/color/image_raw" >
+    <param name="compressed/mode" value="color"/>
+  </node>
+
   <!-- Config camera image topic  -->
   <arg name="camera_rgb_topic" default="/camera/color/image_raw" />
 
